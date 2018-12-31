@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.mapper.RecordMapper">
+    <insert id="addRecord" parameterType="record">
+        insert into `record`(goodsName,username,number,type,state)
+        values (#{goodsName},#{username},#{number},#{type},#{state})
+    </insert>
+    <update id="updateRecord" parameterType="record">
+        update record set
+        goodsName=#{goodsName},
+        username=#{username},
+        number=#{number},
+        type=#{type},
+        state=#{state}
+        where id=#{id}
+    </update>
+    <delete id="deleteRecord">
+        delete from record where id=#{id}
+    </delete>
+
+    <select id="getAllRecord" resultType="record">
+        select * from record
+    </select>
+</mapper>

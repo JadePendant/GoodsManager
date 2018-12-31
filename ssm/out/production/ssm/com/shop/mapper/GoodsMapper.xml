@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.mapper.GoodsMapper">
+    <insert id="addGoods" parameterType="goods">
+        insert into `goods`(goodsName,context,number,max,min,price,username)
+        values (#{goodsName},#{context},#{number},#{max},#{min},#{price},#{username})
+    </insert>
+    <update id="updateGoods" parameterType="goods">
+        update goods set
+        goodsName=#{goodsName},
+        context=#{context},
+        number=#{number},
+        max=#{max},
+        min=#{min},
+        price=#{price},
+        username=#{username}
+        where id=#{id}
+    </update>
+    <delete id="deleteGoods">
+        delete from goods where id=#{id}
+    </delete>
+    <select id="getAllGoods" resultType="goods">
+        select * from goods
+    </select>
+    <select id="getGoodsWithName" resultType="goods">
+        select * from goods where goodsName=#{goodsName}
+    </select>
+    <select id="getGoodsWithUsername" resultType="goods">
+        select * from goods where username=#{username}
+    </select>
+    <select id="getGoodsWithUserGoods" resultType="goods">
+        select * from goods where goodsName=#{goodsName} and username=#{username}
+    </select>
+</mapper>
