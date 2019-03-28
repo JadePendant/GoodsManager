@@ -3,10 +3,9 @@
     <div class="action-container">
       <div class="search"><Input v-model="goodsName" size="large" placeholder="请输入商品名" style="width:500px" />
         <Button type="primary" @click="search" style="margin-left:5px;">查找</Button><Button type="primary" @click="viewAll"
-          style="margin-left:5px;">显示所有</Button></div>
-      <div class="add"><Button type="primary" @click="addModal">增加</Button></div>
+          style="margin-left:5px;margin-right:5px;">显示所有</Button><Button  type="primary" @click="addModal">增加</Button></div>
     </div>
-    <Table :columns="columns" :data="data"></Table>
+    <Table :columns="columns" :data="data" height="700"></Table>
     <Modal v-model="updatemodal" @on-ok="handleSubmit()" @on-cancel="cancel">
       <div>
         <Form ref="updateform" :model="updateform" :rules="ruleValidate" :label-width="80">
@@ -145,47 +144,47 @@
         },
         columns: [{
             type: 'selection',
-            width: 100
+            width: 50
           },
           {
             title: '序号',
             type: 'index',
-            width: 100
+            width: 50
           },
           {
             title: '商品名',
             key: 'goodsName',
-            width: 200
+            width: 100
           },
           {
             title: '介绍',
             key: 'context',
-            width: 200
+            width: 150
           },
           {
             title: '数量',
             key: 'number',
-            width: 200
+            width: 100
           },
           {
             title: '最大库存',
             key: 'max',
-            width: 200
+            width:150
           },
           {
             title: '最小库存',
             key: 'min',
-            width: 200
+            width: 150
           },
           {
             title: '价格',
             key: 'price',
-            width: 300
+            width: 100
           },
           {
             title: '所属人',
             key: 'username',
-            width: 200
+            width: 150
           },
           {
             title: '操作',
@@ -416,14 +415,8 @@
 
 <style scoped>
   .action-container {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .search {
-    float: left;
-    margin-left: 20px;
-    margin-right: 1200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
 </style>

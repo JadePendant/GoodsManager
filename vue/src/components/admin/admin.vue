@@ -79,13 +79,13 @@
   .menu-container{
 float: left;
 height:100%;
-width: 15%;
+width: 20%;
 position: relative;
 background-color: #515a6e;
   }
   .view_container{
     height: 100%;
-    width: 85%;
+    width: 80%;
     float: left;
   }
 </style>

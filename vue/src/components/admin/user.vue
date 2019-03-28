@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="action-container">
-      <div class="search"><Input v-model="username" size="large" placeholder="请输入用户名" style="width:500px" />
-        <Button type="primary" @click="search" style="margin-left:5px;">查找</Button><Button type="primary" @click="viewAll" style="margin-left:5px;">显示所有</Button></div>
-      <div class="add"><Button type="primary" @click="addModal">增加</Button></div>
+      <div>
+        <Input v-model="username" size="large" placeholder="请输入用户名" style="width:500px" />
+        <Button type="primary" @click="search" style="margin-left:5px;">查找</Button>
+        <Button type="primary" @click="viewAll" style="margin-left:5px;margin-right:5px;">显示所有</Button>
+        <Button type="primary" @click="addModal">增加</Button>
+        </div>
     </div>
-    <Table :columns="columns" :data="data"></Table>
+    <Table :columns="columns" :data="data" height="700"></Table>
     <Modal v-model="updatemodal" @on-ok="handleSubmit()" @on-cancel="cancel">
       <div>
         <Form ref="updateform" :model="updateform" :rules="ruleValidate" :label-width="80">
@@ -148,47 +151,47 @@
         },
         columns: [{
             type: 'selection',
-            width: 100
+            width: 80
           },
           {
             title: '序号',
             type: 'index',
-            width: 100
+            width: 80
           },
           {
             title: '用户名',
             key: 'username',
-            width: 200
+            width: 100
           },
           {
             title: '密码',
             key: 'password',
-            width: 200
+            width: 120
           },
           {
             title: '昵称',
             key: 'nickname',
-            width: 200
+            width: 150
           },
           {
             title: '性别',
             key: 'sex',
-            width: 200
+            width: 100
           },
           {
             title: '手机号码',
             key: 'phone',
-            width: 300
+            width: 150
           },
           {
             title: '邮箱',
             key: 'email',
-            width: 300
+            width: 150
           },
           {
             title: '地址',
             key: 'address',
-            width: 200
+            width: 150
           },
           {
             title: '操作',
@@ -367,14 +370,7 @@ this.addmodal=true;
 
 <style scoped>
   .action-container {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-
-  .search {
-    float: left;
-    margin-left: 20px;
-    margin-right: 1200px;
-  }
-
 </style>

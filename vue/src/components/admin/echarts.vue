@@ -1,6 +1,5 @@
 <template>
  <div id="myChart" class="container">
-
  </div>
 </template>
 
@@ -27,13 +26,13 @@ drawLine(){
             title: { text: '商品详情表' },
             tooltip: {},
             xAxis: {
-                data: ["笔记本","手机","单车","火车","牙膏","茶杯"]
+                data: ["笔记本","手机","单车","火车","牙膏","茶杯","椅子","钱包"]
             },
             yAxis: {},
             series: [{
                 name: '销量',
                 type: 'bar',
-                data: [3276, 1200, 500,1836,900,1500]
+                data: [3276, 1200, 500,1836,900,1500,400,2500]
             }]
         });
     }
@@ -43,7 +42,7 @@ drawLine(){
 
 <style scoped>
 .container{
-width: 1800px;
-height: 1000px;
+width: 1200px;
+height: 750px;
 }
 </style>
